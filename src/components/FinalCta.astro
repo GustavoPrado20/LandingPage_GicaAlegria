@@ -1,0 +1,15 @@
+---
+import Rainbow from './Rainbow.astro';
+import QuoteButton from './QuoteButton.astro';
+---
+<section class="final-cta bg-orange-deep text-cream relative overflow-hidden pt-[90px] pb-[150px] md:py-[130px]">
+  <Rainbow
+    class="pointer-events-none absolute -right-[90px] -bottom-[110px] w-[420px] md:-right-[60px] md:-bottom-[130px] md:w-[560px]"
+    a4="var(--color-cream)"
+  />
+  <div class="wrap relative">
+    <h2 class="mb-5 max-w-[14em] text-[clamp(2.4rem,5vw,4.2rem)] font-semibold">Vamos montar a sua festa?</h2>
+    <p class="mb-9 max-w-[26em] text-[1.15rem] md:text-[1.25rem]">Conte a data e o tema. A gente responde pelo WhatsApp.</p>
+    <QuoteButton class="btn-cream" />
+  </div>
+</section>

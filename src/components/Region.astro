@@ -1,0 +1,21 @@
+---
+import Rainbow from './Rainbow.astro';
+import { site } from '../config/site';
+const [main, ...others] = site.cities;
+---
+<section id="regiao" class="section bg-rose relative overflow-hidden">
+  <Rainbow
+    class="pointer-events-none absolute -right-[120px] -bottom-[90px] w-[420px] opacity-30 md:-right-[120px] md:-bottom-[110px] md:w-[620px]"
+    a1="var(--color-cream)" a2="var(--color-cream)" a3="var(--color-cream)" a4="var(--color-cream)" heart="var(--color-cream)"
+  />
+  <div class="wrap relative grid items-center gap-9 md:grid-cols-2 md:gap-16">
+    <div>
+      <h2 class="section-title mb-4 max-w-[11em]">Atendemos {main} e região.</h2>
+      <p class="max-w-[26em]">Fale com a gente e veja a disponibilidade para a data da sua festa.</p>
+    </div>
+    <ul class="font-display grid list-none gap-1.5 p-0">
+      <li class="mb-2 text-[3.2rem] leading-[1.05] font-semibold md:text-[4rem]">{main}</li>
+      {others.map((c) => <li class="text-[1.6rem] opacity-80 md:text-[1.9rem]">{c}</li>)}
+    </ul>
+  </div>
+</section>

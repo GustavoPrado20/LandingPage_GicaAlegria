@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import QuoteButton from './QuoteButton.astro';
+import { site } from '../config/site';
+
+const items = [
+  { q: 'Como funciona o kit pegue e monte?', a: 'Você escolhe o tema, combina os detalhes com a gente e monta a decoração em casa, no seu tempo e do seu jeito.' },
+  { q: 'Com quanta antecedência devo reservar?', a: 'Quanto antes, melhor. A agenda depende da data, então chame no WhatsApp para consultar a disponibilidade.' },
+  { q: 'Vocês atendem na minha cidade?', a: `Atendemos ${site.cities.slice(0, -1).join(', ')} e ${site.cities.at(-1)}. Se a sua cidade é outra, é só perguntar.` },
+  { q: 'Como peço um orçamento?', a: 'Clique em Pedir orçamento e conte a data, o tema e o tipo de serviço. A gente responde pelo WhatsApp.' },
+];
+---
+<section id="duvidas" class="section bg-cream-2">
+  <div class="wrap grid items-start gap-9 md:grid-cols-[5fr_7fr] md:gap-16">
+    <div>
+      <h2 class="section-title mb-4">Dúvidas frequentes.</h2>
+      <p class="text-ink-soft mb-7 max-w-[22em]">Não achou o que procurava? Chame a gente no WhatsApp.</p>
+      <QuoteButton />
+    </div>
+    <div>
+      {items.map((it, i) => (
+        <details open={i === 0} class="group border-ink/15 border-t-2 py-6 first:border-t-0">
+          <summary class="font-display flex cursor-pointer list-none items-center justify-between gap-5 text-[1.25rem] leading-tight font-medium md:text-[1.4rem] [&::-webkit-details-marker]:hidden">
+            {it.q}
+            <Icon name="caret-down" class="text-orange-deep transition-transform duration-200 group-open:rotate-180" />
+          </summary>
+          <p class="text-ink-soft mt-3.5 max-w-[34em]">{it.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

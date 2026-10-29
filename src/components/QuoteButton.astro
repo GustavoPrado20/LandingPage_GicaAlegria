@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+import { whatsappLink } from '../config/site';
+
+interface Props {
+  class?: string;
+  label?: string;
+  message?: string;
+}
+// Um único rótulo para a ação principal em toda a página.
+const { class: className = '', label = 'Pedir orçamento', message } = Astro.props;
+---
+<a class:list={['btn', className]} href={whatsappLink(message)} target="_blank" rel="noopener" data-quote>
+  <Icon name="whatsapp-logo" />{label}
+</a>

@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+/* Paleta extraída da logo da Gica Alegria */
+@theme {
+  --color-cream: #fdfaf0;
+  --color-cream-2: #f8eedc;
+  --color-peach: #ecc5a8;
+  --color-peach-soft: #f6dfcb;
+  --color-rose: #e4a193;
+  --color-rose-soft: #f5d9d0;
+  --color-orange: #de954e;
+  --color-orange-deep: #b9540f; /* acento de botões e links (contraste AA sobre creme) */
+  --color-orange-darker: #9e4509;
+  --color-sage: #d5dbd0;
+  --color-sage-soft: #e6eae1;
+  --color-ink: #4b2e2b;
+  --color-ink-soft: #6b4b46;
+
+  --font-display: 'Fredoka Variable', ui-rounded, system-ui, sans-serif;
+  --font-body: 'Figtree Variable', system-ui, sans-serif;
+
+  --radius-card: 28px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    scrollbar-color: var(--color-orange-deep) var(--color-cream-2);
+  }
+  body {
+    @apply bg-cream font-body text-ink text-[17px] leading-relaxed antialiased md:text-[18px];
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display leading-[1.1] tracking-[-0.01em];
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    color: var(--color-ink);
+    background: var(--color-peach);
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-orange-deep);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1240px] px-5 md:px-8;
+  }
+  .section {
+    @apply py-20 md:py-[120px];
+  }
+  .section-title {
+    @apply text-[clamp(2rem,3.6vw,3.1rem)] font-semibold;
+  }
+  .btn {
+    @apply bg-orange-deep text-cream font-display inline-flex items-center gap-2.5 rounded-full px-[26px] py-4 text-[17px] leading-none font-medium whitespace-nowrap no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-orange-darker active:translate-y-0 active:scale-[0.98] md:px-[30px] md:py-[17px] md:text-[18px];
+    min-height: 48px;
+    justify-content: center;
+    transition-property: color, background-color, transform, translate, scale;
+  }
+  .btn-sm {
+    @apply px-4 py-[11px] text-[15px] md:px-[22px] md:py-3 md:text-base;
+    min-height: 44px;
+  }
+  .header-quote {
+    @apply gap-2 px-3 text-sm min-[400px]:px-4 min-[400px]:text-[15px] md:px-[22px] md:text-base;
+  }
+  .btn-cream {
+    @apply bg-cream text-orange-deep hover:bg-white;
+  }
+  .btn-ghost {
+    @apply text-ink hover:bg-ink hover:text-cream bg-transparent shadow-[inset_0_0_0_2px_var(--color-ink)];
+  }
+  .icon {
+    @apply inline-block h-[1.25em] w-[1.25em] flex-none fill-current;
+  }
+  .skip-link {
+    @apply bg-ink text-cream fixed top-3 left-3 z-50 rounded-xl px-5 py-3 font-semibold;
+    transform: translateY(calc(-100% - 1rem));
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+  .final-cta :focus-visible {
+    outline-color: var(--color-cream);
+  }
+  .final-cta ::selection {
+    color: var(--color-ink);
+    background: var(--color-cream);
+  }
+}
+
+/* Fora das camadas para prevalecer também sobre as utilities de movimento. */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  summary .icon {
+    transition: none;
+  }
+  .btn:hover,
+  .btn:active {
+    transform: none;
+    translate: none;
+    scale: none;
+  }
+}

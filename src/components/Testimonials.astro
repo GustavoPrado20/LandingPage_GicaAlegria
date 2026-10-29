@@ -1,0 +1,23 @@
+---
+// TODO: trocar por depoimentos reais da cliente (máximo de 3 linhas cada).
+const quotes = [
+  { text: 'Montamos o kit em casa e ficou lindo. A mesa foi o centro de todas as fotos.', who: 'Cliente, Igaratá', tone: 'bg-peach-soft', big: true, offset: '' },
+  { text: 'O algodão-doce foi o sucesso da festa. As crianças não saíam de perto.', who: 'Cliente, Santa Isabel', tone: 'bg-rose-soft', big: false, offset: 'md:mt-14' },
+  { text: 'Atenção em cada detalhe, do primeiro contato até o fim.', who: 'Cliente, Jacareí', tone: 'bg-sage-soft', big: false, offset: 'md:mt-5' },
+];
+---
+<section class="section">
+  <div class="wrap">
+    <div class="mb-9 max-w-[780px] md:mb-14">
+      <h2 class="section-title">Quem já festejou com a gente.</h2>
+    </div>
+    <div class="grid items-start gap-6 md:grid-cols-[5fr_3.5fr_3.5fr]">
+      {quotes.map((q) => (
+        <figure class:list={['rounded-card p-8 md:p-[34px]', q.tone, q.offset]}>
+          <blockquote class:list={['font-display mb-5 leading-snug', q.big ? 'text-[1.5rem] md:text-[1.75rem]' : 'text-[1.25rem] md:text-[1.35rem]']}>“{q.text}”</blockquote>
+          <figcaption class="text-ink-soft text-base font-semibold">{q.who}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+// Ícones Phosphor (regular), embutidos como SVG para não pesar com fonte de ícones.
+const icons = import.meta.glob('/node_modules/@phosphor-icons/core/assets/regular/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
+interface Props {
+  name: string;
+  class?: string;
+}
+const { name, class: className = '' } = Astro.props;
+const raw = icons[`/node_modules/@phosphor-icons/core/assets/regular/${name}.svg`];
+if (!raw) throw new Error(`Ícone não encontrado: ${name}`);
+const svg = raw.replace('<svg ', `<svg class="icon ${className}" aria-hidden="true" `);
+---
+<Fragment set:html={svg} />

@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import festaLeao from '../assets/img/festa-leao.jpg';
+import algodao from '../assets/img/algodao-doce.jpg';
+import pipoca from '../assets/img/pipoca.jpg';
+
+const steps = ['Escolha o tema', 'Combine com a gente', 'Monte e curta'];
+---
+<section id="servicos" class="section">
+  <div class="wrap">
+    <div class="mb-9 max-w-[780px] md:mb-14">
+      <h2 class="section-title mb-4">Tudo para a festa ficar do seu jeito.</h2>
+      <p class="text-ink-soft max-w-[34em]">Da decoração ao docinho que a criançada adora, a Gica Alegria cuida dos detalhes com carinho.</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-[7fr_5fr]">
+      <article class="bg-cream-2 rounded-card flex flex-col overflow-hidden lg:row-span-2">
+        <Image
+          src={festaLeao}
+          alt="Mesa decorada com painel redondo, arcos de balões e personagens em tema safári"
+          widths={[640, 960, 1100]}
+          sizes="(min-width: 1024px) 700px, 92vw"
+          class="block aspect-[4/3] w-full object-cover"
+        />
+        <div class="flex flex-1 flex-col justify-center px-6 py-8 md:px-8 md:py-10">
+          <h3 class="mb-2.5 text-[1.9rem] font-semibold">Decoração de festas</h3>
+          <p class="text-ink-soft max-w-[32em]">Painéis, balões e mesas montados com criatividade, no tema que seu pequeno sonhou.</p>
+        </div>
+      </article>
+
+      <article class="bg-peach rounded-card flex flex-col justify-between gap-6 px-6 pt-7 pb-8 md:px-9 md:pt-9 md:pb-10">
+        <div>
+          <h3 class="mb-2.5 text-[1.9rem] font-semibold">Kits pegue e monte</h3>
+          <p class="text-ink-soft">Você escolhe o kit e monta com a família. Prático, bonito e do seu jeito.</p>
+        </div>
+        <ol class="grid gap-3.5 md:grid-cols-3 md:gap-4.5">
+          {steps.map((s, i) => (
+            <li class="flex items-baseline gap-3.5 font-semibold leading-tight md:block">
+              <b class="font-display text-orange-deep text-[2rem] leading-none font-semibold md:mb-2 md:block md:text-[2.4rem]">{i + 1}</b>{s}
+            </li>
+          ))}
+        </ol>
+      </article>
+
+      <article class="bg-rose-soft rounded-card grid gap-6 px-6 py-8 md:p-9">
+        <div>
+          <h3 class="mb-2.5 text-[1.9rem] font-semibold">Algodão-doce e pipoca</h3>
+          <p class="text-ink-soft">Máquinas na sua festa, com sabor e diversão para as crianças e para os adultos também.</p>
+        </div>
+        <div class="relative h-[260px] md:h-[270px]">
+          <Image src={algodao} alt="Máquina de algodão-doce vermelha sobre mesa" widths={[360, 540]} sizes="300px" class="absolute top-0 left-0 h-[78%] w-[62%] -rotate-3 rounded-[22px] object-cover shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
+          <Image src={pipoca} alt="Máquina de pipoca com milho e acessórios" widths={[360, 540]} sizes="300px" class="absolute right-0 bottom-0 h-[80%] w-[58%] rotate-[2.5deg] rounded-[22px] object-cover shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
