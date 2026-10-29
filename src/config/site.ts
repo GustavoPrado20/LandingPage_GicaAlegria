@@ -10,11 +10,11 @@ export const site = {
     'Decoração de festas, kits pegue e monte, algodão-doce e pipoca em Igaratá, Santa Isabel, Jacareí, Nazaré Paulista e São José dos Campos.',
 
   // TODO: número com código do país e DDD, só dígitos. Exemplo: 5512999999999
-  whatsapp: '5500000000000',
+  whatsapp: '5511972242232',
   whatsappMessage: 'Oi! Vi o site da Gica Alegria e quero pedir um orçamento.',
 
   // TODO: link do Instagram da Gica Alegria
-  instagram: 'https://www.instagram.com/',
+  instagram: 'https://www.instagram.com/gicaalegria?cplk=MWN2aGw4dmExdjVzbA==',
 
   // A primeira cidade é o foco principal e aparece em destaque.
   cities: ['Igaratá', 'Santa Isabel', 'Jacareí', 'Nazaré Paulista', 'São José dos Campos'],
