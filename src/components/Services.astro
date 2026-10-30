@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import festaLeao from '../assets/img/festa-leao.jpg';
 import algodao from '../assets/img/algodao-doce.jpg';
 import pipoca from '../assets/img/pipoca.jpg';
+import festaAoArLivre from '../assets/img/festa-ao-ar-livre.jpg';
 
 const steps = ['Escolha o tema', 'Combine com a gente', 'Monte e curta'];
 ---
@@ -47,9 +48,10 @@ const steps = ['Escolha o tema', 'Combine com a gente', 'Monte e curta'];
           <h3 class="mb-2.5 text-[1.9rem] font-semibold">Algodão-doce e pipoca</h3>
           <p class="text-ink-soft">Máquinas na sua festa, com sabor e diversão para as crianças e para os adultos também.</p>
         </div>
-        <div class="relative h-[260px] md:h-[270px]">
-          <Image src={algodao} alt="Máquina de algodão-doce vermelha sobre mesa" widths={[360, 540]} sizes="300px" class="absolute top-0 left-0 h-[78%] w-[62%] -rotate-3 rounded-[22px] object-cover shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
-          <Image src={pipoca} alt="Máquina de pipoca com milho e acessórios" widths={[360, 540]} sizes="300px" class="absolute right-0 bottom-0 h-[80%] w-[58%] rotate-[2.5deg] rounded-[22px] object-cover shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
+        <div class="relative h-[290px] md:h-[330px]">
+          <Image src={festaAoArLivre} alt="Máquinas de algodão-doce e pipoca em uma festa ao ar livre, com pula-pula ao fundo" widths={[360, 540, 720]} sizes="260px" class="absolute top-0 right-0 aspect-[3/4] h-full w-auto rotate-[1.5deg] rounded-[22px] object-cover shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
+          <Image src={algodao} alt="Máquina de algodão-doce vermelha sobre mesa" widths={[300, 450]} sizes="200px" class="absolute top-0 left-0 z-10 h-[44%] w-[38%] -rotate-3 rounded-[22px] object-cover md:w-[46%] shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
+          <Image src={pipoca} alt="Máquina de pipoca com milho e acessórios" widths={[300, 450]} sizes="200px" class="absolute bottom-0 left-[1%] z-10 h-[50%] w-[36%] rotate-[2.5deg] rounded-[22px] object-cover object-[center_30%] md:w-[44%] shadow-[0_14px_30px_rgba(120,60,50,0.18)]" />
         </div>
       </article>
     </div>

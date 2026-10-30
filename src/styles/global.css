@@ -26,7 +26,6 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 88px;
-    scrollbar-color: var(--color-orange-deep) var(--color-cream-2);
   }
   body {
     @apply bg-cream font-body text-ink text-[17px] leading-relaxed antialiased md:text-[18px];
@@ -35,18 +34,6 @@
   h2,
   h3 {
     @apply font-display leading-[1.1] tracking-[-0.01em];
-    text-wrap: balance;
-    overflow-wrap: break-word;
-  }
-  p {
-    text-wrap: pretty;
-  }
-  ::selection {
-    color: var(--color-ink);
-    background: var(--color-peach);
-  }
-  a {
-    text-underline-offset: 0.2em;
   }
   :focus-visible {
     outline: 3px solid var(--color-orange-deep);
@@ -72,16 +59,9 @@
   }
   .btn {
     @apply bg-orange-deep text-cream font-display inline-flex items-center gap-2.5 rounded-full px-[26px] py-4 text-[17px] leading-none font-medium whitespace-nowrap no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-orange-darker active:translate-y-0 active:scale-[0.98] md:px-[30px] md:py-[17px] md:text-[18px];
-    min-height: 48px;
-    justify-content: center;
-    transition-property: color, background-color, transform, translate, scale;
   }
   .btn-sm {
     @apply px-4 py-[11px] text-[15px] md:px-[22px] md:py-3 md:text-base;
-    min-height: 44px;
-  }
-  .header-quote {
-    @apply gap-2 px-3 text-sm min-[400px]:px-4 min-[400px]:text-[15px] md:px-[22px] md:text-base;
   }
   .btn-cream {
     @apply bg-cream text-orange-deep hover:bg-white;
@@ -91,33 +71,5 @@
   }
   .icon {
     @apply inline-block h-[1.25em] w-[1.25em] flex-none fill-current;
-  }
-  .skip-link {
-    @apply bg-ink text-cream fixed top-3 left-3 z-50 rounded-xl px-5 py-3 font-semibold;
-    transform: translateY(calc(-100% - 1rem));
-  }
-  .skip-link:focus {
-    transform: translateY(0);
-  }
-  .final-cta :focus-visible {
-    outline-color: var(--color-cream);
-  }
-  .final-cta ::selection {
-    color: var(--color-ink);
-    background: var(--color-cream);
-  }
-}
-
-/* Fora das camadas para prevalecer também sobre as utilities de movimento. */
-@media (prefers-reduced-motion: reduce) {
-  .btn,
-  summary .icon {
-    transition: none;
-  }
-  .btn:hover,
-  .btn:active {
-    transform: none;
-    translate: none;
-    scale: none;
   }
 }

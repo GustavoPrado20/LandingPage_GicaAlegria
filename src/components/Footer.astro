@@ -5,15 +5,12 @@ import { site, whatsappLink } from '../config/site';
 import logoNome from '../assets/img/logo-nome.png';
 ---
 <footer class="py-12 md:pb-14">
-  <div class="wrap grid items-center gap-x-8 gap-y-6 text-center md:grid-cols-[1fr_auto] md:text-left">
-    <Image src={logoNome} alt="Gica Alegria, festa infantil" height={112} class="block h-14 w-auto justify-self-center md:justify-self-start" />
-    <ul class="flex list-none flex-wrap items-center justify-center gap-x-6 gap-y-2 p-0 text-base font-semibold md:justify-end md:gap-x-[30px]">
-      <li><a class="text-ink-soft hover:text-orange-deep inline-flex min-h-11 items-center gap-2 no-underline" href={site.instagram} target="_blank" rel="noopener"><Icon name="instagram-logo" />Instagram</a></li>
-      <li><a class="text-ink-soft hover:text-orange-deep inline-flex min-h-11 items-center gap-2 no-underline" href={whatsappLink()} target="_blank" rel="noopener"><Icon name="whatsapp-logo" />WhatsApp</a></li>
+  <div class="wrap flex flex-col items-start gap-8 md:flex-row md:flex-wrap md:items-center md:justify-between">
+    <Image src={logoNome} alt="Gica Alegria, festa infantil" height={112} class="h-14 w-auto" />
+    <ul class="flex list-none gap-6 p-0 text-base font-semibold md:gap-[30px]">
+      <li><a class="text-ink-soft hover:text-orange-deep inline-flex items-center gap-2 no-underline" href={site.instagram} target="_blank" rel="noopener"><Icon name="instagram-logo" />Instagram</a></li>
+      <li><a class="text-ink-soft hover:text-orange-deep inline-flex items-center gap-2 no-underline" href={whatsappLink()} target="_blank" rel="noopener"><Icon name="whatsapp-logo" />WhatsApp</a></li>
     </ul>
-    <div class="text-ink-soft border-ink/10 flex flex-col items-center gap-2 border-t pt-6 md:col-span-2 md:flex-row md:justify-between md:gap-8">
-      <small class="text-sm">{site.cities[0]}, {site.region} e região.</small>
-      <small class="text-sm">Site produzido por GPSoftworks.</small>
-    </div>
+    <small class="text-ink-soft w-full text-sm">{site.cities[0]}, {site.region} e região. Site por GP Softworks.</small>
   </div>
 </footer>

@@ -7,13 +7,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
  * 2) Galeria: cada foto surge uma vez ao entrar na tela (guia o olhar pela vitrine de trabalhos).
  * Nada mais se mexe. Sem JS ou com "reduzir movimento", tudo aparece parado.
  */
-const motion = gsap.matchMedia();
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-motion.add('(prefers-reduced-motion: no-preference)', () => {
+if (!reduce) {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('[data-ring]', { y: 20, duration: 0.9, ease: 'expo.out', stagger: 0.1, clearProps: 'transform' });
-  gsap.from('[data-ring-img]', { opacity: 0, duration: 0.7, delay: 0.3, ease: 'expo.out', clearProps: 'opacity' });
+  gsap.from('[data-ring]', { y: 28, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1, clearProps: 'transform,opacity' });
 
   gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((el) => {
     gsap.from(el, {
@@ -25,4 +24,4 @@ motion.add('(prefers-reduced-motion: no-preference)', () => {
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
     });
   });
-});
+}

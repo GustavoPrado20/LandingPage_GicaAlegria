@@ -3,10 +3,10 @@ import { Image } from 'astro:assets';
 import QuoteButton from './QuoteButton.astro';
 import heroArco from '../assets/img/hero-arco.jpg';
 ---
-<section id="topo" class="pt-6 md:pt-10">
-  <div class="wrap grid items-center gap-10 md:grid-cols-2 md:gap-8 lg:gap-16">
-    <div class="pt-3 md:pt-0 md:pb-10">
-      <h1 class="mb-6 max-w-[14ch] text-[clamp(2.5rem,5vw,3.8rem)] font-semibold">
+<section id="topo" class="pt-6">
+  <div class="wrap grid items-end gap-9 md:min-h-[calc(100dvh-96px)] md:grid-cols-2 md:gap-16">
+    <div class="pt-3 md:self-center md:pt-0 md:pb-14">
+      <h1 class="mb-6 text-[2.6rem] font-semibold md:text-[clamp(2.5rem,4.2vw,3.8rem)]">
         Festas que viram lembranças felizes.
       </h1>
       <p class="text-ink-soft mb-9 max-w-[30em] text-[1.1rem] md:text-[1.25rem]">
@@ -16,7 +16,7 @@ import heroArco from '../assets/img/hero-arco.jpg';
     </div>
 
     <!-- Porta-arco-íris: ecoa o arco da logo -->
-    <div class="mx-auto w-full max-w-[420px] md:mx-0 md:max-w-[520px] md:justify-self-end">
+    <div class="w-full md:max-w-[600px] md:justify-self-end">
       <div data-ring class="bg-orange rounded-t-full px-[11px] pt-[11px] md:px-4 md:pt-4">
         <div data-ring class="bg-rose rounded-t-full px-[11px] pt-[11px] md:px-4 md:pt-4">
           <div data-ring class="bg-peach rounded-t-full px-[11px] pt-[11px] md:px-4 md:pt-4">
@@ -26,7 +26,7 @@ import heroArco from '../assets/img/hero-arco.jpg';
                 src={heroArco}
                 alt="Arco de balões em tons pastel na entrada de uma festa infantil"
                 widths={[480, 720, 960]}
-                sizes="(min-width: 1168px) 392px, (min-width: 1024px) calc(50vw - 192px), (min-width: 768px) calc(50vw - 176px), (min-width: 460px) 332px, calc(100vw - 128px)"
+                sizes="(min-width: 768px) 560px, 90vw"
                 loading="eager"
                 fetchpriority="high"
                 class="block aspect-[3/4] h-auto w-full rounded-t-full object-cover"

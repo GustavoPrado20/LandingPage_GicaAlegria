@@ -11,19 +11,21 @@ const links = [
   { href: '#duvidas', label: 'Dúvidas' },
 ];
 ---
-<header class="py-4 lg:py-5">
-  <div class="wrap flex flex-wrap items-center justify-between gap-x-3 gap-y-3 lg:gap-x-8">
-    <a href="#topo" class="flex shrink-0 items-center gap-2 no-underline md:gap-2.5" aria-label="Gica Alegria, início">
-      <Image src={logoArco} alt="" height={84} class="h-7 w-auto md:h-[42px]" loading="eager" />
-      <Image src={logoNome} alt="Gica Alegria, festa infantil" height={76} class="h-6 w-auto md:h-[38px]" loading="eager" />
+<header class="flex h-[72px] items-center">
+  <div class="wrap flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-2.5 no-underline" aria-label="Gica Alegria, início">
+      <Image src={logoArco} alt="" height={84} class="h-[34px] w-auto md:h-[42px]" loading="eager" />
+      <Image src={logoNome} alt="Gica Alegria, festa infantil" height={76} class="h-7 w-auto md:h-[38px]" loading="eager" />
     </a>
-    <nav aria-label="Principal" class="order-3 w-full lg:order-none lg:ml-auto lg:w-auto">
-      <ul class="grid grid-cols-2 gap-x-4 text-[15px] font-semibold min-[400px]:flex min-[400px]:flex-wrap min-[400px]:justify-between lg:gap-x-6 lg:text-base">
-        {links.map((l) => (
-          <li><a href={l.href} class="text-ink-soft hover:text-orange-deep flex min-h-11 items-center no-underline">{l.label}</a></li>
-        ))}
-      </ul>
-    </nav>
-    <QuoteButton class="btn-sm header-quote shrink-0" />
+    <div class="flex items-center gap-8 lg:gap-[34px]">
+      <nav aria-label="Principal" class="hidden md:block">
+        <ul class="flex gap-6 text-base font-semibold lg:gap-[34px]">
+          {links.map((l) => (
+            <li><a href={l.href} class="text-ink-soft hover:text-orange-deep no-underline">{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <QuoteButton class="btn-sm" />
+    </div>
   </div>
 </header>
